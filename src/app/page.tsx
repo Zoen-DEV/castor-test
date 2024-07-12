@@ -13,7 +13,7 @@ export default function Home() {
       setToken(savedToken);
     } else {
       const hash = getTokenFromUrl();
-      window.location.hash = "";
+      location.hash = "";
       const _token = hash.access_token;
 
       if (_token && typeof _token === "string") {
@@ -24,6 +24,12 @@ export default function Home() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (token.length === 0) {
+      localStorage.clear();
+    }
+  }, [token]);
 
   return !savedToken && !token ? (
     <LoginPage />
