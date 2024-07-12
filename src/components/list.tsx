@@ -55,7 +55,7 @@ const ListPage = ({
   };
 
   const logout = () => {
-    localStorage.clear();
+    window.localStorage.clear();
     setToken("");
   };
 
