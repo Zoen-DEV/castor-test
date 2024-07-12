@@ -1,0 +1,26 @@
+.login-main-container {
+  height: 100vh;
+  @include flex(row, center, center);
+
+  a {
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+
+    padding: 12px 32px;
+    background-color: $--spotify-green-100;
+    color: $--black;
+    border-radius: 24px;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: $--spotify-green-50;
+    }
+
+    &:active {
+      background-color: $--spotify-green-100;
+    }
+  }
+}

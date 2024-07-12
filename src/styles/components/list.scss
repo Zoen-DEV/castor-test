@@ -1,0 +1,140 @@
+.list-main-container {
+  @include flex(column, flex-start, center);
+  height: 100vh;
+
+  header {
+    @include flex(row, center, center, 24px);
+    width: 100%;
+    background-color: #353535;
+    padding: 24px 0;
+
+    .logout {
+      all: unset;
+      cursor: pointer;
+      @include flex(row, center, center);
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    form {
+      @include flex(row, normal, center, 8px);
+      height: 32px;
+
+      input {
+        all: unset;
+        height: 100%;
+        background-color: #747474;
+        padding: 3px 12px;
+        border-radius: 6px;
+        border: 1px solid #747474;
+
+        &::placeholder {
+          color: #b5b5b5;
+        }
+
+        &:focus {
+          border-color: #000;
+        }
+      }
+
+      button {
+        all: unset;
+        cursor: pointer;
+        height: 100%;
+      }
+    }
+  }
+
+  .results-lists-container {
+    width: 90%;
+    height: 100%;
+    @include flex(row, space-between, center);
+
+    section {
+      @include flex(column, flex-start, center, 16px);
+      height: 90%;
+      width: 30%;
+      padding-bottom: 24px;
+
+      h2 {
+        align-self: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .results-link {
+        text-decoration: none;
+        background-color: #343434;
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        color: $--font;
+
+        .image {
+          width: 50px;
+          height: 50px;
+          border-radius: 8px 0 0 8px;
+          object-fit: cover;
+        }
+
+        &:hover {
+          background-color: $--spotify-green-200;
+        }
+      }
+
+      .is-empty {
+        animation: ease 3s pulse infinite;
+      }
+
+      .artist,
+      .album {
+        @include flex(row, flex-start, center, 8px);
+      }
+
+      .tracks {
+        padding: 10px 0;
+
+        p {
+          margin-left: 12px;
+        }
+
+        span {
+          font-size: 10px;
+          color: #a5a5a5;
+          margin-left: 12px;
+        }
+      }
+
+      .album {
+        font-size: 14px;
+
+        .album-info {
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .without-image {
+        padding: 14px 0;
+
+        p {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #565656a2;
+  }
+  50% {
+    background-color: #56565624;
+  }
+  100% {
+    background-color: #565656bc;
+  }
+}

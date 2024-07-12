@@ -1,0 +1,26 @@
+$--background: #121212;
+$--font: #fff;
+$--spotify-green-50: #1fdf64;
+$--spotify-green-100: #1ed760;
+$--spotify-green-200: #169c46;
+$--black: #000;
+
+:root {
+  background-color: $--background;
+  color: $--font;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex($d, $j, $a, $g: 0, $w: nowrap) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $j;
+  align-items: $a;
+  gap: $g;
+  flex-wrap: $w;
+}
