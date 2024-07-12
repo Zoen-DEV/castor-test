@@ -25,12 +25,6 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (token.length === 0) {
-      localStorage.clear();
-    }
-  }, [token]);
-
   return !savedToken && !token ? (
     <LoginPage />
   ) : (
